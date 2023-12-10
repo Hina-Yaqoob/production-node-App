@@ -27,16 +27,15 @@ router.get("/top", getTopProductsController);
 router.get("/:id", getSingleProductController);
 
 // CREATE PRODUCT
-router.post("/create", isAuth, isAdmin, singleUpload, createProductController);
+router.post("/create", singleUpload, createProductController);
 
 //UPDATE PRODUCT
-router.put("/:id", isAuth, isAdmin, updateProductController);
+router.put("/:id", updateProductController);
 
 //UPDATE PRODUCT image
 router.put(
   "/image/:id",
-  isAuth,
-  isAdmin,
+
   singleUpload,
   updateProductImageController
 );
@@ -44,16 +43,15 @@ router.put(
 //DELETE PRODUCT IMAGE
 router.delete(
   "/delete-image/:id",
-  isAuth,
-  isAdmin,
+
   deleteProductImageController
 );
 
 //DELETE PRODUCT
-router.delete("/delete/:id", isAuth, isAdmin, deleteProductController);
+router.delete("/delete/:id", deleteProductController);
 //***********************************************************************//
 
 //REVIEW PRODUCT
-router.put("/:id/review", isAuth, productReviewController);
+router.put("/:id/review", productReviewController);
 
 export default router;
