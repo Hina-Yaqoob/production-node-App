@@ -117,7 +117,7 @@ export const createProductController = async (req, res) => {
       price,
       category,
       stock,
-      images: [image],
+      // images: [image],
     });
 
     res.status(201).send({
