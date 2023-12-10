@@ -1,5 +1,5 @@
 import express from "express";
-import { isAdmin, isAuth } from "./../middlewares/authMiddleWare.js";
+// import { isAdmin, isAuth } from "./../middlewares/authMiddleWare.js";
 import {
   createCategory,
   deleteCategoryController,
@@ -13,15 +13,15 @@ const router = express.Router();
 // CATEGORY ROUTES
 
 // CREATE CATEGORIES
-router.post("/create", isAuth, isAdmin, createCategory);
+router.post("/create", createCategory);
 
 // GET ALL CATEGORIES
 router.get("/get-all", getAllCategoriesController);
 
 // DELETE  CATEGORY
-router.delete("/delete/:id", isAuth, isAdmin, deleteCategoryController);
+router.delete("/delete/:id", deleteCategoryController);
 
 // UPDATE  CATEGORY
-router.put("/update/:id", isAuth, isAdmin, updateCategoryController);
+router.put("/update/:id", updateCategoryController);
 
 export default router;
