@@ -98,18 +98,18 @@ export const createProductController = async (req, res) => {
     //   });
     // }
 
-    if (!req.file) {
-      return res.status(500).send({
-        success: false,
-        message: "please provide product images",
-      });
-    }
-    const file = getDataUri(req.file);
-    const cdb = await cloudinary.v2.uploader.upload(file.content);
-    const image = {
-      public_id: cdb.public_id,
-      url: cdb.secure_url,
-    };
+    // if (!req.file) {
+    //   return res.status(500).send({
+    //     success: false,
+    //     message: "please provide product images",
+    //   });
+    // }
+    // const file = getDataUri(req.file);
+    // const cdb = await cloudinary.v2.uploader.upload(file.content);
+    // const image = {
+    //   public_id: cdb.public_id,
+    //   url: cdb.secure_url,
+    // };
 
     await productModel.create({
       name,
