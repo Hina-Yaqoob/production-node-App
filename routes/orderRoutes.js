@@ -14,19 +14,19 @@ const router = express.Router();
 // -----------  --- ORDER ROUTES---
 
 //CREATE Order
-router.post("/create", isAuth, createOrderController);
+router.post("/create",  createOrderController);
 
 //GET ALL OSRDERS
-router.get("/my-orders", isAuth, getMyOrdersController);
+router.get("/my-orders",  getMyOrdersController);
 
 //GET SINGLEL OSRDERS DETAIL
-router.get("/my-orders/:id", isAuth, singleOrderDetailsController);
+router.get("/my-orders/:id",  singleOrderDetailsController);
 
 //--------ADMIN -------
 //GET ALL ORDERS
-router.get("/admin/get-all-orders", isAuth, isAdmin, getAllOrdersController);
+router.get("/admin/get-all-orders",  isAdmin, getAllOrdersController);
 
 //CHANGE ORDER STATUS
-router.put("/admin/order/:id", isAuth, isAdmin, changeOrderStatusController);
+router.put("/admin/order/:id",  isAdmin, changeOrderStatusController);
 
 export default router;
